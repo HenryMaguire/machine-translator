@@ -125,8 +125,8 @@ vocab_s, id_to_word_s = word_to_ids(freq_s, vocab_size_s, lang_s)
 vocab_t, id_to_word_t = word_to_ids(freq_t, vocab_size_t, lang_t)
 print id_to_word_s.items()[0:20]
 
-source_train = replace_with_word_id(tok_source_train, id_to_word_s, lang_s)
-save_obj(source_train, "source_train")
+#source_train = replace_with_word_id(tok_source_train, id_to_word_s, lang_s)
+#save_obj(source_train, "source_train")
 target_train = replace_with_word_id(tok_target_train, id_to_word_t, lang_t)
 save_obj(target_train, "target_train")
 # Obviously vocab preprocessing doesn't get to see the test data
