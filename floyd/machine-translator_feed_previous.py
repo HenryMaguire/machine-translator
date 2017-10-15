@@ -1,5 +1,5 @@
 """
-floyd run --gpu --env tensorflow-1.1:py2 --data hblorm/datasets/nmt_data/1:/DATA "python machine-translator-gpu.py"
+floyd run --gpu --env tensorflow-1.1:py2 --data hblorm/datasets/<DATASET>/1:/DATA "python machine-translator-gpu.py"
 """
 import time
 import pickle
@@ -10,23 +10,39 @@ import os
 import logging
 import sys
 from sklearn.cross_validation import train_test_split
+from nltk.translate import bleu_score
 reload(sys)
 sys.setdefaultencoding('utf8')
 #logging.getLogger("tensorflow").setLevel(logging.ERROR)
 
-logging.basicConfig(level=logging.DEBUG, filename='/output/logfile', filemode="a+",
-                        format="%(asctime)-15s %(levelname)-8s %(message)s")
+
+
+test_only = False # Do we want to load in the embeddings?
+plot_name = '8'
+feed_previous_probability = 0.6
+anneal_feed_previous = False
 encoder_hidden_units = 512
+epochs =  51 # How many times we loop over the whole training data
+
+GPU = True
 reverse_encoder_inputs = True
-test_only = False
-feed_previous_probability = 0.
-additional_decode_steps = 5
+prepend = "/output/"
+device_1 = "gpu:0"
+device_2 = device_1
+data_path = "/DATA/"
+if not GPU:
+    prepend = ''
+    device_1 = "cpu:0"
+    device_1 = "cpu:1"
+    data_path = "DATA/"
+additional_decode_steps = 3
 dev_fraction = 0.15
 test_fraction = 0.05
 
-device_2 = "gpu:0"
-device_1 = "gpu:0"
-log_dir = "/output/nmt_512_c"
+log_dir = prepend+"nmt_"+plot_name
+logging.basicConfig(level=logging.DEBUG, filename=prepend+'logfile'+plot_name, filemode="a+",
+                        format="%(asctime)-15s %(levelname)-8s %(message)s")
+
 import tensorflow as tf
 from tensorflow.contrib.tensorboard.plugins import projector
 tf.logging.set_verbosity(tf.logging.ERROR)
@@ -45,7 +61,7 @@ def cut_words(text, id2word):
     return new_text
 #dev_length = 75000
 #data_path = "/Users/henrymaguire/Work/machine-learning/projects/machine-translator/DATA/nmt_data_f/"
-data_path = "/DATA/"
+
 
 data_dict = load_obj(data_path+'data_dic')
 
@@ -54,24 +70,39 @@ word2id_t = data_dict["word2id_t"]
 id2word_s = data_dict["id2word_s"]
 id2word_t = data_dict["id2word_t"]
 
-s_train = data_dict["s_train"]
-t_train = data_dict["t_train"]
-s_test = data_dict["s_test"]
-t_test = data_dict["t_test"]
-"""
+s_train_1 = data_dict["s_train"]
+t_train_1 = data_dict["t_train"]
+s_test_1 = data_dict["s_test"]
+t_test_1 = data_dict["t_test"]
+
 #Used for debugging
+s_train, t_train = [], []
+for s, t in zip(s_train_1, t_train_1):
+    if len(s)<=20:
+        s_train.append(s)
+        t_train.append(t)
+s_test, t_test = [], []
+for s, t in zip(s_test_1, t_test_1):
+    if len(s)<=20:
+        s_test.append(s)
+        t_test.append(t)
+print len(s_test)
+print len(s_train)
+"""
 s_train = cut_words(s_train, id2word_s)
 t_train = cut_words(t_train, id2word_t)
 s_test = cut_words(s_test, id2word_s)
 t_test = cut_words(t_test, id2word_t)
-"""
+
 #Used for model refinement
+"""
+"""
 dev_length = int(len(s_train)*dev_fraction)
 s_train, s_test, t_train, t_test = train_test_split(
                                 s_train[0:dev_length],
                                 t_train[0:dev_length],
                                 test_size=test_fraction, random_state=42)
-
+"""
 print id2word_s[0], id2word_s[1], id2word_s[2]
 print id2word_t[0], id2word_t[1], id2word_t[2]
 train_length = len(s_train)
@@ -81,6 +112,7 @@ lang_s = 'fr'
 lang_t = 'en'
 
 logging.info("Preprocessed data loaded...")
+logging.info("Training and testing len: {} and {}".format(train_length, len(s_test)))
 print("Preprocessed data loaded...")
 def get_embeddings(id_to_word, lang):
     # We load pretrained word2vec embeddings from polyglot to save on training time
@@ -185,6 +217,7 @@ with tf.device(device_1):
         variable_summaries(encoder_outputs)
         variable_summaries(encoder_final_state)
 
+with tf.device(device_2):
     encoder_max_time, batch_size = tf.unstack(tf.shape(encoder_inputs))
     decoder_lengths = encoder_inputs_length + additional_decode_steps
     # +4 additional steps, +1 leading <EOS> token for decoder inputs
@@ -240,11 +273,13 @@ with tf.device(device_1):
             return tf.nn.embedding_lookup(source_embeddings, prediction)
 
         def feed_ground_truth():
-            ground_truth = tf.gather(decoder_targets, time)
+            ground_truth = tf.gather(decoder_inputs, time)
             return tf.nn.embedding_lookup(target_embeddings, ground_truth)
 
         def get_next_input():
             #dot product between previous ouput and weights, then + biases
+            # if uniform random number < fpp, feed_previous. If not feed target data.
+            #
             return tf.cond(tf.constant(np.random.uniform())<feed_previous_prob, feed_previous, feed_ground_truth)
 
 
@@ -327,7 +362,6 @@ def batch_source_target(source, target, batch_size):
         #print len(target[start:end])
         yield source[start:end], target[start:end]
 
-
 def make_feed_dict(fd_keys, s_batch, t_batch, reverse_encoder_inputs= False, feed_previous_prob_=1):
     encoder_inputs_, encoder_input_lengths_  = format_batch(s_batch)
     if reverse_encoder_inputs:
@@ -346,7 +380,7 @@ def make_feed_dict(fd_keys, s_batch, t_batch, reverse_encoder_inputs= False, fee
 
 
 #NUM_CORES = 3
-epochs =  51 # How many times we loop over the whole training data
+
 batch_size = 92 # After how many sequences do we update the weights?
 
 merged = tf.summary.merge_all()
@@ -359,9 +393,18 @@ print('Training...')
 #with tf.Session(config=tf.ConfigProto(
 #  intra_op_parallelism_threads=NUM_CORES)) as sess:
 print make_feed_dict(fd_keys, [[2,3,3],[4,4,5]], [[2,3,3],[4,4,5]])
+
 def save_metadata(metadata, filename):
     with open(filename, 'w') as f:
         f.write(metadata.encode('utf-8'))
+
+def get_fp_prob(feed_previous_prob, epochs, anneal_fp=True):
+    if anneal_fp:
+        for i in np.linspace(0.2,0.5,epochs):
+            yield i
+    else:
+        while True:
+            yield feed_previous_prob
 
 with tf.Session(config=tf.ConfigProto(log_device_placement=True,
                                     allow_soft_placement=True)) as sess:
@@ -389,22 +432,28 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=True,
     # Saves a configuration file that TensorBoard will read during startup.
     projector.visualize_embeddings(summary_writer, config)
     # Training cycle
+    feed_previous_prob = get_fp_prob(feed_previous_probability, epochs, anneal_fp=anneal_feed_previous)
     try:
         batch_n = 0
         ti = time.time()
         print "training has begun..."
+        epoch_losses = []
         for epoch in range(1, epochs+1):
+            fp_prob = feed_previous_prob.next()
+            logging.info("fp_prob = {}".format(fp_prob))
             ti = time.time()
             saver = tf.train.Saver()
+            epoch_loss = []
             if epoch%10==0:
                 save_path = saver.save(sess, log_dir+"/model.ckpt", epoch)
             for s_batch, t_batch in batch_source_target(s_train,
                                                         t_train, batch_size):
                 feed_dict = make_feed_dict(fd_keys,s_batch, t_batch,
                                 reverse_encoder_inputs=reverse_encoder_inputs,
-                                feed_previous_prob_= feed_previous_probability)
+                                feed_previous_prob_= fp_prob)
                 _, l = sess.run([train_op, loss], feed_dict)
-                if (batch_n==0) or (batch_n%30) == 0:
+                epoch_loss.append(l)
+                if (batch_n==0) or (batch_n%200) == 0:
                     loss_list.append(l)
                     logging.info("epoch {}".format(epoch))
                     logging.info('batch {}'.format(batch_n-(epoch-1)*total_batches))
@@ -438,9 +487,14 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=True,
                         i+=1
                 batch_n += 1
             logging.info("Epoch {} took {} seconds to complete.".format(epoch, time.time()-ti))
-            print ("Epoch {} took {} seconds to complete.".format(epoch, time.time()-ti))
-
-            save_obj(loss_list, log_dir+"/loss_track")
+            print ("Epoch {} took {} seconds to complete, with average loss of {}.".format(epoch
+                                                    ,time.time()-ti, np.mean(epoch_loss)))
+            logging.info("Epoch {} took {} seconds to complete, with average loss of {}.".format(epoch
+                                                    ,time.time()-ti, np.mean(epoch_loss)))
+            save_obj(loss_list, prepend+"loss_track"+plot_name)
+            if np.mean(epoch_loss) < 0.3:
+                save_path = saver.save(sess, log_dir+"/model.ckpt", epoch)
+                break
         logging.info('Training is complete')
     except KeyboardInterrupt:
         print 'training interrupted'
@@ -461,33 +515,44 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=True,
                                                      predict_.T)):
                 actuals.append([remove_EOS_PAD(act)])
                 predictions.append(remove_EOS_PAD(pred))
-                #print ('  sample {}:'.format(rand_sample))
-                #print ('    input     : {} \n {}'.format(
-                #                 format_idx(inp), ids_to_phrases(inp, id2word_s)))
+
                 print "batch number: ", batch_n
                 print ('    actual     : {} \n \t {}'.format(
                                  format_idx(act), ids_to_phrases(act, id2word_t)))
                 print ('    predicted     : {} \n \t {}'.format(
                                  format_idx(pred), ids_to_phrases(pred, id2word_t)))
-                if i >5:
+                logging.info('    actual     : {} \n \t {}'.format(
+                                 format_idx(act), ids_to_phrases(act, id2word_t)))
+                logging.info('    predicted     : {} \n \t {}'.format(
+                                 format_idx(pred), ids_to_phrases(pred, id2word_t)))
+                if i >3:
                     break
 
             batch_n+=1
+        save_obj([predictions, actuals], prepend+'PREDICTIONS'+plot_name)
+        """
         try:
+            #print predictions, actuals
             BLEU4 = bleu_score.corpus_bleu(actuals, predictions, weights=(0.25, 0.25, 0.25, 0.25))
-        except:
+        except Exception as err:
+            print err
             BLEU4 = 0
         try:
             BLEU2 = bleu_score.corpus_bleu(actuals, predictions, weights=(0.5, 0.5))
-        except:
+
+        except Exception as err:
+            print err
             BLEU2 = 0
         try:
             BLEU1 = bleu_score.corpus_bleu(actuals, predictions, weights=([1]))
-        except:
+        except Exception as err:
+            print err
             BLEU1 = 0
+        logging.info('Testing is complete\nNMT Corpus BLEU4: {} \t BLEU2: {} \t BLEU1: {}\n'.format(BLEU4, BLEU2, BLEU1))
         print'Testing is complete\nNMT Corpus BLEU4: {} \t BLEU2: {} \t BLEU1: {}\n'.format(BLEU4, BLEU2, BLEU1)
-        save_obj([BLEU1, BLEU2, BLEU4], '/output/BLEU')
+        save_obj([BLEU1, BLEU2, BLEU4], prepend+'BLEU')
         #print "Benchmark BLEU4 : {} \t BLEU2: {} \t BLEU1: {}\n".format(BM_BLEU4, BM_BLEU2, BM_BLEU1)
+        """
     except KeyboardInterrupt:
         print 'testing interrupted'
 

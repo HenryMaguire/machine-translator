@@ -1,0 +1,8 @@
+embeddings {
+  tensor_name: "source_embeddings/source_embeddings:0"
+  metadata_path: "nmt_512_c/metadata_s.tsv"
+}
+embeddings {
+  tensor_name: "target_embeddings/target_embeddings:0"
+  metadata_path: "nmt_512_c/metadata_t.tsv"
+}

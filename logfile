@@ -154,3 +154,268 @@
  <UNK> <UNK> asked <UNK> currency <UNK> <UNK> <UNK> <UNK> <UNK> 
 2017-10-13 03:16:37,637 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2] 
  <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 19:49:00,339 INFO     Preprocessed data loaded...
+2017-10-13 19:53:05,802 INFO     Preprocessed data loaded...
+2017-10-13 19:54:30,215 INFO     Preprocessed data loaded...
+2017-10-13 19:58:46,828 INFO     Preprocessed data loaded...
+2017-10-13 20:01:41,520 INFO     Preprocessed data loaded...
+2017-10-13 20:01:51,914 INFO     epoch 1
+2017-10-13 20:01:51,914 INFO     batch 0
+2017-10-13 20:01:52,346 INFO     loss: 3.57876586914
+2017-10-13 20:01:53,145 INFO       sample 1:
+2017-10-13 20:01:53,152 INFO         input     : [2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> 
+2017-10-13 20:01:53,152 INFO         actual     : [2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> 
+2017-10-13 20:01:53,152 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:01:53,152 INFO       sample 2:
+2017-10-13 20:01:53,152 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:01:53,153 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 545, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> feeling <UNK> 
+2017-10-13 20:01:53,153 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:17,497 INFO     Preprocessed data loaded...
+2017-10-13 20:03:27,723 INFO     epoch 1
+2017-10-13 20:03:27,723 INFO     batch 0
+2017-10-13 20:03:28,154 INFO     loss: 3.56532287598
+2017-10-13 20:03:28,946 INFO       sample 1:
+2017-10-13 20:03:28,953 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:28,953 INFO         actual     : [2, 2, 2, 785, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> country <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:28,953 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:28,954 INFO       sample 2:
+2017-10-13 20:03:28,955 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 447, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> cette <UNK> <UNK> 
+2017-10-13 20:03:28,955 INFO         actual     : [2, 2, 257, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> travel <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:28,955 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:03:55,847 INFO     Preprocessed data loaded...
+2017-10-13 20:04:06,240 INFO     epoch 1
+2017-10-13 20:04:06,240 INFO     batch 0
+2017-10-13 20:04:06,672 INFO     loss: 3.81043124199
+2017-10-13 20:04:07,470 INFO       sample 1:
+2017-10-13 20:04:07,476 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:04:07,477 INFO         actual     : [986, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ has <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:04:07,477 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:04:07,478 INFO       sample 2:
+2017-10-13 20:04:07,478 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:04:07,479 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:04:07,479 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:12,915 INFO     Preprocessed data loaded...
+2017-10-13 20:05:23,209 INFO     epoch 1
+2017-10-13 20:05:23,209 INFO     batch 0
+2017-10-13 20:05:23,643 INFO     loss: 3.35852241516
+2017-10-13 20:05:24,437 INFO       sample 1:
+2017-10-13 20:05:24,444 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:24,444 INFO         actual     : [2, 2, 915, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 285, 1, 1] 
+ <UNK> <UNK> fairly <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> wrong 
+2017-10-13 20:05:24,444 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:24,445 INFO       sample 2:
+2017-10-13 20:05:24,446 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:24,446 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:24,446 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:05:45,740 INFO     Epoch 1 took 23.8917059898 seconds to complete.
+2017-10-13 20:06:08,395 INFO     Epoch 2 took 22.6537230015 seconds to complete.
+2017-10-13 20:06:32,015 INFO     Epoch 3 took 23.6195859909 seconds to complete.
+2017-10-13 20:06:32,016 INFO     Training is complete
+2017-10-13 20:08:37,966 INFO     Preprocessed data loaded...
+2017-10-13 20:08:48,320 INFO     epoch 1
+2017-10-13 20:08:48,323 INFO     batch 0
+2017-10-13 20:08:48,754 INFO     loss: 3.33388924599
+2017-10-13 20:08:49,548 INFO       sample 1:
+2017-10-13 20:08:49,555 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:08:49,555 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:08:49,555 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:08:49,556 INFO       sample 2:
+2017-10-13 20:08:49,557 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:08:49,557 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:08:49,557 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:09:10,811 INFO     Epoch 1 took 23.8571369648 seconds to complete.
+2017-10-13 20:09:33,900 INFO     Epoch 2 took 23.0883960724 seconds to complete.
+2017-10-13 20:09:57,085 INFO     Epoch 3 took 23.1833171844 seconds to complete.
+2017-10-13 20:09:57,086 INFO     Training is complete
+2017-10-13 20:12:14,905 INFO     Preprocessed data loaded...
+2017-10-13 20:12:26,036 INFO     epoch 1
+2017-10-13 20:12:26,038 INFO     batch 0
+2017-10-13 20:12:26,484 INFO     loss: 3.56419038773
+2017-10-13 20:12:27,342 INFO       sample 1:
+2017-10-13 20:12:27,346 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:27,346 INFO         actual     : [2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:27,346 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:27,347 INFO       sample 2:
+2017-10-13 20:12:27,347 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:27,348 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:27,348 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:12:50,762 INFO     Epoch 1 took 26.1119279861 seconds to complete.
+2017-10-13 20:13:16,263 INFO     Epoch 2 took 25.4979608059 seconds to complete.
+2017-10-13 20:13:41,510 INFO     Epoch 3 took 25.2432851791 seconds to complete.
+2017-10-13 20:13:41,512 INFO     Training is complete
+2017-10-13 20:15:32,802 INFO     Preprocessed data loaded...
+2017-10-13 20:15:43,324 INFO     epoch 1
+2017-10-13 20:15:43,327 INFO     batch 0
+2017-10-13 20:15:43,763 INFO     loss: 3.66376209259
+2017-10-13 20:15:44,571 INFO       sample 1:
+2017-10-13 20:15:44,571 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:15:44,578 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:15:44,578 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:15:44,579 INFO       sample 2:
+2017-10-13 20:15:44,579 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:15:44,579 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:15:44,579 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:16:05,928 INFO     Epoch 1 took 23.9881770611 seconds to complete.
+2017-10-13 20:16:29,219 INFO     Epoch 2 took 23.2860200405 seconds to complete.
+2017-10-13 20:16:52,656 INFO     Epoch 3 took 23.4343521595 seconds to complete.
+2017-10-13 20:16:52,658 INFO     Training is complete
+2017-10-13 20:24:07,623 INFO     Preprocessed data loaded...
+2017-10-13 20:24:18,201 INFO     epoch 1
+2017-10-13 20:24:18,203 INFO     batch 0
+2017-10-13 20:24:18,637 INFO     loss: 3.53101348877
+2017-10-13 20:24:19,438 INFO       sample 1:
+2017-10-13 20:24:19,438 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 556, 2, 2, 2, 2, 968, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> ont <UNK> <UNK> <UNK> <UNK> avec <UNK> <UNK> 
+2017-10-13 20:24:19,444 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:24:19,445 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:24:19,445 INFO       sample 2:
+2017-10-13 20:24:19,446 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:24:19,446 INFO         actual     : [2, 241, 2, 2, 2, 2, 2, 2, 2, 241, 1, 1] 
+ <UNK> currency <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> currency 
+2017-10-13 20:24:19,446 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:24:40,797 INFO     Epoch 1 took 23.9779031277 seconds to complete.
+2017-10-13 20:25:04,019 INFO     Epoch 2 took 23.2172658443 seconds to complete.
+2017-10-13 20:25:27,198 INFO     Epoch 3 took 23.1766369343 seconds to complete.
+2017-10-13 20:25:27,203 INFO     Training is complete
+2017-10-13 20:26:18,968 INFO     Preprocessed data loaded...
+2017-10-13 20:26:29,455 INFO     epoch 1
+2017-10-13 20:26:29,458 INFO     batch 0
+2017-10-13 20:26:29,895 INFO     loss: 3.65512108803
+2017-10-13 20:26:30,716 INFO       sample 1:
+2017-10-13 20:26:30,716 INFO         input     : [2, 2, 2, 2, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:26:30,718 INFO         actual     : [2, 2, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:26:30,719 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:26:30,721 INFO       sample 2:
+2017-10-13 20:26:30,722 INFO         input     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 435, 2, 2, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> secrétaire <UNK> <UNK> 
+2017-10-13 20:26:30,722 INFO         actual     : [2, 2, 2, 2, 2, 913, 567, 2, 2, 2, 2, 2, 1, 1] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> european affairs <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:26:30,722 INFO         predicted     : [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 
+ <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> 
+2017-10-13 20:26:52,334 INFO     Epoch 1 took 24.2666659355 seconds to complete.
+2017-10-13 20:27:14,984 INFO     Epoch 2 took 22.6484248638 seconds to complete.
+2017-10-13 20:27:38,330 INFO     Epoch 3 took 23.3454470634 seconds to complete.
+2017-10-13 20:27:38,332 INFO     Training is complete
+2017-10-13 20:29:02,770 INFO     Preprocessed data loaded...
+2017-10-13 20:29:20,007 INFO     epoch 1
+2017-10-13 20:29:20,010 INFO     batch 0
+2017-10-13 20:29:22,245 INFO     loss: 8.97004318237
+2017-10-13 20:29:26,681 INFO       sample 1:
+2017-10-13 20:29:26,682 INFO         input     : [2443, 16953, 10250, 14676, 15817, 6992, 2256, 1] 
+ vidéo technologies des explication une &gt consommateurs 
+2017-10-13 20:29:26,693 INFO         actual     : [7578, 2582, 3835, 11164, 2123, 1, 1] 
+ consumers &gt video streaming technology 
+2017-10-13 20:29:26,693 INFO         predicted     : [1, 1, 1, 1, 1, 1] 
+ 
+2017-10-13 20:29:26,693 INFO       sample 2:
+2017-10-13 20:29:26,694 INFO         input     : [9230, 7964, 8305, 14903, 7964, 7422, 21107, 10477, 9640, 1] 
+ discrimination de et stigmates de beaucoup a y il 
+2017-10-13 20:29:26,694 INFO         actual     : [16822, 5342, 17214, 9678, 6120, 11772, 9678, 15405, 7925, 3581, 6687, 1, 1] 
+ and then when i was 10 i got put into care 
+2017-10-13 20:29:26,694 INFO         predicted     : [1, 1, 1, 1, 1, 2368, 4242, 16113, 11456, 17017, 773, 2947, 9067] 
+ 
+2017-10-13 20:38:20,878 INFO     epoch 1
+2017-10-13 20:38:20,881 INFO     batch 100
+2017-10-13 20:38:23,067 INFO     loss: 5.28900766373
+2017-10-13 20:38:27,370 INFO       sample 1:
+2017-10-13 20:38:27,370 INFO         input     : [18526, 19803, 2, 12596, 6593, 2, 2, 12456, 2, 3984, 9188, 7308, 24819, 2, 21107, 1] 
+ ltd publishing <UNK> series studies <UNK> <UNK> stratford <UNK> &amp holloway by debate <UNK> a 
+2017-10-13 20:38:27,380 INFO         actual     : [7768, 2, 16363, 3555, 16618, 12699, 2, 2, 1407, 392, 2, 3281, 19236, 1, 1] 
+ a <UNK> debate by holloway &amp <UNK> <UNK> studies series <UNK> publishing ltd 
+2017-10-13 20:38:27,380 INFO         predicted     : [2, 2, 3067, 3555, 3555, 5930, 2, 2, 1049, 1049, 2, 1049, 6120, 1, 1] 
+ <UNK> <UNK> also by by the <UNK> <UNK> for for <UNK> for was 
+2017-10-13 20:38:27,381 INFO       sample 2:
+2017-10-13 20:38:27,382 INFO         input     : [3129, 10250, 10301, 14233, 22523, 19123, 4411, 22101, 10017, 1] 
+ difficultés des présentement éprouve industrie l&apos que sais je 
+2017-10-13 20:38:27,382 INFO         actual     : [9678, 19752, 6752, 3969, 2321, 10856, 19873, 7768, 4387, 699, 1, 1] 
+ i know that this industry is hitting a rough patch 
+2017-10-13 20:38:27,383 INFO         predicted     : [5930, 9678, 6752, 3969, 3969, 10856, 10856, 7768, 7768, 7768, 1, 1] 
+ the i that this this is is a a a 
+2017-10-13 20:43:50,725 INFO     Preprocessed data loaded...
+2017-10-13 20:44:07,275 INFO     epoch 1
+2017-10-13 20:44:07,276 INFO     batch 0
+2017-10-13 20:44:09,657 INFO     loss: 8.83707523346
+2017-10-13 20:44:14,777 INFO       sample 1:
+2017-10-13 20:44:14,788 INFO         input     : [21275, 8640, 10250, 5437, 14585, 22544, 5496, 19936, 8305, 19337, 4070, 1] 
+ linux ordinateurs des sur deux tous tournent oracle et sas • 
+2017-10-13 20:44:14,788 INFO         actual     : [12986, 1817, 16822, 2467, 8264, 8554, 17345, 8294, 5085, 1, 1] 
+ • sas and oracle both run on linux machines 
+2017-10-13 20:44:14,788 INFO         predicted     : [1773] 
+ slashed 
+2017-10-13 20:44:14,789 INFO       sample 2:
+2017-10-13 20:44:14,789 INFO         input     : [15154, 7419, 10277, 14608, 20567, 14053, 10834, 19371, 2, 10863, 2, 21437, 11504, 17131, 7964, 21625, 8305, 2, 7964, 16292, 1] 
+ initiés les par &quot picasso chef &apos surnommé <UNK> est <UNK> olaf ans 45 de âgé et <UNK> de originaire 
+2017-10-13 20:44:14,790 INFO         actual     : [1477, 18948, 2, 16822, 14942, 1577, 1027, 8813, 2, 10856, 2, 18696, 8039, 5076, 15933, 8039, 3555, 3314, 1, 1] 
+ originally from <UNK> and 45 years old olaf <UNK> is <UNK> called &apos chef picasso &apos by insiders 
+2017-10-13 20:44:14,790 INFO         predicted     : [8766, 19790, 17013, 17013, 18406] 
+ busts growth ™ ™ rid 
+2017-10-13 20:46:52,281 INFO     Preprocessed data loaded...
+2017-10-13 20:47:08,765 INFO     epoch 1
+2017-10-13 20:47:08,767 INFO     batch 0
+2017-10-13 20:47:10,971 INFO     loss: 8.5769329071
+2017-10-13 20:47:15,373 INFO       sample 1:
+2017-10-13 20:47:15,384 INFO         input     : [17126, 17027, 1] 
+ 48 players 
+2017-10-13 20:47:15,384 INFO         actual     : [15763, 12829, 1, 1] 
+ players 24 
+2017-10-13 20:47:15,384 INFO         predicted     : [11820] 
+ e-commerce 
+2017-10-13 20:47:15,384 INFO       sample 2:
+2017-10-13 20:47:15,385 INFO         input     : [15491, 6471, 2637, 15817, 3653, 8767, 16311, 5443, 16386, 8662, 5753, 15817, 10277, 23657, 10017, 1] 
+ ? unique monnaie une nous voulons pourquoi savoir à fondamentale question une par commence je 
+2017-10-13 20:47:15,385 INFO         actual     : [9678, 4241, 18948, 5930, 13230, 17352, 16115, 5654, 5739, 244, 7768, 13673, 241, 1, 1] 
+ i start from the premise of why do we want a single currency 
+2017-10-13 20:47:15,385 INFO         predicted     : [11820] 
+ e-commerce 
+2017-10-13 20:47:51,395 INFO     Epoch 1 took 49.4652950764 seconds to complete.
+2017-10-13 20:48:41,298 INFO     Epoch 2 took 49.8973779678 seconds to complete.
+2017-10-13 20:49:30,296 INFO     Epoch 3 took 48.9951958656 seconds to complete.
+2017-10-13 20:49:30,302 INFO     Training is complete

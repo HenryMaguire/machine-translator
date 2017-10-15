@@ -83,16 +83,17 @@ def tokenize_sentences(text_source, text_target, max_source_length=23):
 
 test_fraction = 0.05 # percentage of data to use as test
 
-
 source_train, source_test, target_train, target_test = train_test_split(
                                 source.split('\n'), target.split('\n'),
                                 test_size=test_fraction, random_state=42)
+
 
 print "TESTING DATA"
 source_test, freq_s, target_test, freq_t = tokenize_sentences(source_test, target_test)
 print "TRAINING DATA"
 source_train, freq_s, target_train, freq_t = tokenize_sentences(source_train, target_train)
-
+save_obj(source_test, 'DATA/source_test')
+save_obj(target_test, 'DATA/target_test')
 
 """
 def further_train_cleaning(source, target):
@@ -118,9 +119,6 @@ print "\n".join([' '.join(source_train[1]), ' '.join(target_train[1])])
 print "------------"
 print "\n".join([' '.join(source_train[10]), ' '.join(target_train[10])])
 print "------------\n Judging by keywords and rudimentary knowledge of French, are the corpora are still aligned?"
-print "corpora still same length with training length: {} and testing: {}".format(
-                                            len(source_train),len(source_test))
-
 #save_obj(source_test_, "DATA/source_test") # For benchmark model
 #save_obj(target_test_, "DATA/target_test")
 
