@@ -12,3 +12,9 @@ var
 *.pyc
 *.swp
 .DS_Store
+DATA/
+fp_02_data/
+fp_06_data/
+logfile
+short_data/
+
