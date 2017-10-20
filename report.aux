@@ -1,0 +1,54 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\newlabel{hyp:cho}{{7}{1}{}{Hfootnote.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Problem Statement}{2}{subsection.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The BLEU Metric}{2}{subsection.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Benchmark Model}{3}{subsection.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}The Datasets}{3}{subsection.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Neural Machine Translation}{3}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Word Embeddings}{3}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Recurrent Neural Networks}{4}{subsection.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Long Short-Term Memory Units}{4}{subsection.2.3}}
+\newlabel{eq:hiddenLSTM}{{6}{4}{Long Short-Term Memory Units}{equation.2.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Schematic of an unrolled Long Short-Term Memory cell. $\sigma $ represents a sigmoid gating function Figure from \href  {http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/}{this blog post by Britz.}}}{5}{figure.1}}
+\newlabel{fig:encoder-decoder}{{1}{5}{Schematic of an unrolled Long Short-Term Memory cell. $\sigma $ represents a sigmoid gating function Figure from \href {http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/}{this blog post by Britz.}}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Schematic of encoder-decoder architecture. In this instance, the decoder is fed in previously generated tokens as input. }}{5}{figure.2}}
+\newlabel{fig:encoder-decoder}{{2}{5}{Schematic of encoder-decoder architecture. In this instance, the decoder is fed in previously generated tokens as input}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Encoder-Decoder Architecture}{5}{subsection.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Analysis and Data Exploration}{6}{section.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Normalised frequency of sequence lengths in French and English corpora. Vertical lines represent the chosen cutoff in frequency lengths which were 18 phrases for French and 15 phrases for English.}}{7}{figure.3}}
+\newlabel{fig:seq-length}{{3}{7}{Normalised frequency of sequence lengths in French and English corpora. Vertical lines represent the chosen cutoff in frequency lengths which were 18 phrases for French and 15 phrases for English}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The Zipf distribution of word rank by word frequency in both English and French. The straight line on log-log axes indicates a power law scaling, which means that the frequency of a word is proportional to the inverse of its word rank. This allows the vocabularies to be truncated heavily.}}{7}{figure.4}}
+\newlabel{fig:zipf}{{4}{7}{The Zipf distribution of word rank by word frequency in both English and French. The straight line on log-log axes indicates a power law scaling, which means that the frequency of a word is proportional to the inverse of its word rank. This allows the vocabularies to be truncated heavily}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Algorithms}{8}{subsection.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Methodology}{8}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data Preprocessing}{8}{subsection.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Implementation}{8}{subsection.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Refinement}{9}{subsection.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{10}{section.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces N-gram BLEU scores for feed previous probabilities of 0.5 (left) and 0.7 (right). }}{10}{figure.5}}
+\newlabel{fig:over_time}{{5}{10}{N-gram BLEU scores for feed previous probabilities of 0.5 (left) and 0.7 (right)}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Model Evaluation and Validation}{10}{subsection.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Average BLEU1 score for the NMT (left) and benchmark model (right) for sequences of each length.}}{11}{figure.6}}
+\newlabel{fig:per_sequence}{{6}{11}{Average BLEU1 score for the NMT (left) and benchmark model (right) for sequences of each length}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{12}{section.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Hidden layers visualised using t-SNE representing phrase embeddings or `thought vectors'. Image from \ref  {hyp:cho}. }}{12}{figure.7}}
+\newlabel{fig:phrase_representation}{{7}{12}{Hidden layers visualised using t-SNE representing phrase embeddings or `thought vectors'. Image from \ref {hyp:cho}}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Improvement}{12}{subsection.6.1}}
